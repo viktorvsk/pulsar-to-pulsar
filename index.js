@@ -89,7 +89,7 @@ const destClient = new Pulsar.Client(DEST_CLIENT_PARAMS);
 
     const payload = msg.getData().toString();
 
-    const result = await producer.send({ data: Buffer.from(JSON.stringify(payload)) });
+    const result = await producer.send({ data: Buffer.from(payload) });
 
     if (!result) cleanupAndExit;
 
